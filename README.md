@@ -11,7 +11,7 @@
 </p>
 </div>
 
-Join Group
+# Join Group
 [![Group Bot](https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/JFqb84LyIhfJJxFsKc3apI)
 
 # ONLY RUN RAILWAY
@@ -26,7 +26,7 @@ Edit the required value in [`config.js`](https://github.com/Rizxyu/RIXLE-BOT/blo
 ```js
 userbot = {
  owner: [
-  "6281261324817", 
+  "6281261324817",
   "62822980698995", 
   "436504463151666",
   "6282328303332",
@@ -38,8 +38,9 @@ userbot = {
    },
    prefix: ["/"],
    gexp: 50,
-   packname: 'RixleBot',
+   packname: "RIXLE-BOT OFFICIAL",
    author: 'Arifi Razzaq',
+
     setting: {
     admin: "only admin",
     group: "only group",
@@ -60,10 +61,10 @@ userbot = {
 
 | FEATURE |🌱|
 | ------------- | ------------- |
-| JADIBOT|✅|
-| Wikipedia|✅|
-| Google search|✅|
-| Sticker|✅|
+| Anti Toxic|✅|
+| Anti Troli|✅|
+| Anti Link Group|✅|
+| Anonymous Chat|✅|
 
 | GRUP |👥|
 | ------------- | ------------- |
@@ -86,7 +87,10 @@ userbot = {
 
 | OTHER |🤗|
 | ------------- | ------------- |
-
+| Jadibot|✅|
+| Wikipedia|✅|
+| Google search|✅|
+| Sticker|✅|
 
 # 👥My Team 
 * [`Fauzan (Dev)`](https://github.com/Fau-Zan)
@@ -95,4 +99,4 @@ userbot = {
 * [`Rizky (Dev)`](https://github.com/Rizxyu)
 * [`Arifi Razzaq (Dev)`](https://github.com/Arifirazzaq2001)
 * [`Oreki (Contributor)`](https://github.com/Oreki-san)
-* [`ＲｉｘｌｅＢoｔ (bot)`](https://wa.me/62823283033323)
+* [`ＲｉｘｌｅＢoｔ (bot)`](https://wa.me/6281261324817)
