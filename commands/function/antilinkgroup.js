@@ -6,7 +6,6 @@ botAdmin: true,
 async functions(m) { 
 let { conn } = data
  if (!m.sender == conn.user.jid && m.text.includes("chat.whatsapp.com")) {
-await sleep (4000) 
 m.reply("Maaf Anda Di Keluarkan")
 await conn.groupRemove(m.chat, [m.quoted.sender])
 }
