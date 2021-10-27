@@ -1,4 +1,3 @@
-
 "use strict";
 const fs = require("fs")
 //const qrcode = require("qrcode")
@@ -30,33 +29,26 @@ if (fs.existsSync('./session.json')) conn.loadAuthInfo('./session.json')
 conn.on('qr', qr => {
 qrcode.generate(qr, { small: true })
 console.log(
-      color("[", "white"),
-      color("!", "blue"),
-      color("]", "white"),
-      color("Scan Kode QR Diatas Untuk JadiBot\nQR Expired dalam 30 detik")
+      conn.logger.warn("[!] Scan Kode QR Diatas, Expired dalam 30 detik")
     )
 })
-
 conn.on('credentials-updated', () => {
         conn.logger.warn('credentials updated!')
         })
-
 conn.on('connecting', () => {
         console.log(`Connecting...`)
         })
-
 conn.on("open", () => {
 const authInfo = conn.base64EncodedAuthInfo()
+        conn.logger.warn('open docs is complete!')
         let stats = {
    status: 200,
    message: "success",
    info: "berhasil masuk ke dalam baileys"
 }
-
 conn.on("ws-close", async() => {
         conn.logger.warn('Connected Timeout')
         })
-
 conn.on("close", async() => {
         conn.logger.warn('Closed Connection')
         })
