@@ -227,7 +227,7 @@ before: `*${me}*
 *› Kalender islam:* ${dateIslamic}
 *› Kalender Java:* ${week} ${weton} ${date}
 
-*› Github:*\nhttps://github.com/Rizxyu/RIXLE-BOT`.trimStart(),
+*› Github:*\nhttps://github.com/Arifirazzaq2001/RIXLE-BOT`.trimStart(),
 type: "*#type*\n",
 after: "\n"
 }
