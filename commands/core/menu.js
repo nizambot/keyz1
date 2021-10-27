@@ -70,9 +70,6 @@ Hello ${name} ${ucapan()}
 *Found Bug?*
 ${userbot.prefix}report text
 
-*My Rest Api's*
-https://rizapi.herokuapp.com/
-
 *Click the menu button below*`
 
 m.reply('Getting data to view Menu')
