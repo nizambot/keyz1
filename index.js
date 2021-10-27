@@ -51,7 +51,6 @@ conn.on("ws-close", async() => {
         })
 conn.on("close", async() => {
         conn.logger.warn('Closed Connection')
-        await conn.connect()
         })
 conn.on("open", () => {
         conn.longger.warn('reopen docs!')
