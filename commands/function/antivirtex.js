@@ -1,5 +1,5 @@
 module.exports = { 
-name: "antivirtex",  //@arifirazzaq2001
+name: "antivirtex", //@arifirazzaq2001
 
 async functions(m) { 
 let { conn } = data
