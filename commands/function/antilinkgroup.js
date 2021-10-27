@@ -9,6 +9,8 @@ let { conn } = data
  if (m.sender == this.user.jid) return false
 m.reply(`Maaf @${m.sender.split("@")[0]} *Anti Link Group Terdeteksi!* \n_Maaf Anda Di Keluarkan._`)
 await conn.groupRemove(m.chat, [m.quoted.sender])
+m.t
+reply("*Dilarang Promosi Dalam grup!*")
 }
 }
 }
