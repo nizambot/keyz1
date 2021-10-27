@@ -2,9 +2,6 @@ module.exports = {
 name: "antilinkgroup", //@arifirazzaq2001
 admin: true,
 botAdmin: true,
-const sleep = async (ms) => {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
 
 async functions(m) { 
 let { conn } = data
