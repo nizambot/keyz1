@@ -38,7 +38,7 @@ userbot = {
    prefix: ["/"],
    gexp: 50,
    packname: 'RixleBot',
-   author: '@_RizkyAdiNur',
+   author: 'Arifi Razzaq',
     setting: {
     admin: "only admin",
     group: "only group",
