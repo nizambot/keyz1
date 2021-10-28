@@ -22,7 +22,7 @@ const groupM = await conn.groupMetadata(jid)
 const mem = participants[0]
 const imgnye = await conn.getProfilePicture(mem)
 .catch(e => {
-img = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9CGh88WwR8hAX_NKjKC_WrOOzT-cVnGsw34DgCji_TEIPJaIl1Hbkeia5&s=10'
+img = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2-EY2K9fA93qJM3wF1lPfYMYI6IXF9fkGyR4F43fpRon796thPr4I2KPb&s=10'
 })
 switch (action) {
   case "remove":
@@ -39,10 +39,10 @@ let image = await new Canvas.Goodbye()
   .setColor("message-box", "#8015EA")
   .setColor("title", "#8015EA")
   .setColor("avatar", "#8015EA")
-  .setBackground("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJOP9RorHQ1OkTW0uYmOkNkBOkvIreWirvug&usqp=CAU")
+  .setBackground("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9o6Xig_RmaDhX_5hDWnsm0UPMJIZPnpaTMNEN0gL2cyZDuq7rIDz6gINj&s=10")
   .toAttachment();
  buff = await image.toBuffer()
-teks = ` Keluar Dari Group ${groupM.subject}`
+teks = `@${mem.split("@")[0]} Keluar Dari Group ${groupM.subject}`
  conn.sendButtonLoc(jid, buff, teks, userbot.packname, 'Selamat tinggal', 'say goodbye')
     } catch (e) {
     console.log(e) 
@@ -62,10 +62,11 @@ let imaged = await new Canvas.Welcome()
   .setColor("message-box", "#8015EA")
   .setColor("title", "#8015EA")
   .setColor("avatar", "#8015EA")
-  .setBackground("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJOP9RorHQ1OkTW0uYmOkNkBOkvIreWirvug&usqp=CAU")
+  .setBackground("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9o6Xig_RmaDhX_5hDWnsm0UPMJIZPnpaTMNEN0gL2cyZDuq7rIDz6gINj&s=10")
   .toAttachment();
  buff = await imaged.toBuffer()
- conn.sendFile(jid, buff)
+ teks = `@${mem.split("@")[0]} Bergabung dalam Group ${groupM.subject}`
+ conn.sendButtonLoc(jid, buff, teks, userbot.packname, 'Selamat Datang', 'say welcome')
     } catch (e) {
     console.log(e) 
     }
