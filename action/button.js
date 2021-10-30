@@ -210,7 +210,6 @@ let d = new Date(new Date + 3600000)
     })
 
 const rawwr = Object.keys(global.Events)
-
 const menu = {
 
 before: `*${me}*
@@ -245,7 +244,7 @@ if (!(i in tags) && i) tags[i] = i
 let before = menu.before
 let type = menu.type
 let after = menu.after
-
+let l = 1
 text = [
 before,
 ...Object.keys(tags).map(v => {
