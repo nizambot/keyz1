@@ -227,7 +227,7 @@ before: `*${me}*
 *› Kalender islam:* ${dateIslamic}
 *› Kalender Java:* ${week} ${weton} ${date}
 
-*› Github:*\nhttps://github.com/Arifirazzaq2001/RIXLE-BOT`.trimStart(),
+*› Github:*\nhttps://github.com/Arifirazzaq2001/RIXLE-BOT-V3`.trimStart(),
 type: "*#type*\n",
 after: "\n"
 }
@@ -251,7 +251,7 @@ before,
 ...Object.keys(tags).map(v => {
 return type.replace(/#type/g, tags[v]).toUpperCase() + ("\n") + [
 ...raw.filter(menu => menu.type && menu.type.includes(v) && menu.help).map(menu => {
-return "*°* " + userbot.prefix + menu.help
+return `[${l++}] ` + userbot.prefix + menu.help
 })].join("\n")
 }),
 after
