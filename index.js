@@ -56,7 +56,6 @@ conn.on("close", async() => {
 conn.on("open", () => {
         conn.longger.warn('reopen docs!')
         })
-
 console.log(stats)
 fs.writeFileSync('./session.json', JSON.stringify(authInfo, null, '\t'))
 })
