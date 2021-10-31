@@ -61,10 +61,9 @@ fs.writeFileSync('./session.json', JSON.stringify(authInfo, null, '\t'))
 })
 
 setInterval(() => {
- conn.setStatus(`Ｓｔａｔｕｓ Ｂｏｔ:
-› Runtime: ${Ft.count(process.uptime())}
+ conn.setStatus(`› Runtime: ${Ft.count(process.uptime())}
 › Hostname: ${Ft.os.hostname()}
-| BY FEAR TEAM`).catch((_) => _)
+| Road To 30 Juz ─ Pejuang Sholawat`).catch((_) => _)
 },1000)
  require('./src/loader')
  async function run() {// Function biar bisa run bot
