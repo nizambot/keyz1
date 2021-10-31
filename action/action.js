@@ -16,61 +16,53 @@ isCharge: battry.live
 }
 
 module.exports = {
-async groupUpdate({jid, participants, action}) {
-console.log("member yang bergabung " + participants[0].split("@")[0])
-const groupM = await conn.groupMetadata(jid)
-const mem = participants[0]
-const imgnye = await conn.getProfilePicture(mem)
+async groupUpdate(member) {
+console.log(member)
+let groupM = await conn.fetchGroupMetadataFromWA(member.jid)
+let mem = member.participants[0]
+let action = member.action
+let img = conn.getProfilePicture(mem)
 .catch(e => {
-img = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2-EY2K9fA93qJM3wF1lPfYMYI6IXF9fkGyR4F43fpRon796thPr4I2KPb&s=10'
+img = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9CGh88WwR8hAX_NKjKC_WrOOzT-cVnGsw34DgCji_TEIPJaIl1Hbkeia5&s=10'
 })
 switch (action) {
-  case "remove":
-    try {
+case 'remove': 
 let image = await new Canvas.Goodbye()
-  .setUsername(`${await conn.getName(mem)}`)
-  .setDiscriminator(`${groupM.participants.length}`)
-  .setMemberCount(`${groupM.participants.length}`)
-  .setGuildName(`${groupM.subject}`)
-  .setAvatar(`${imgnye}`)
+  .setUsername(encodeURI(await conn.getName(mem)))
+  .setDiscriminator(groupM.participants.length)
+  .setMemberCount(groupM.participants.length)
+  .setGuildName(encodeURI(groupM.subject))
+  .setAvatar(img)
   .setColor("border", "#8015EA")
   .setColor("username-box", "#8015EA")
   .setColor("discriminator-box", "#8015EA")
   .setColor("message-box", "#8015EA")
   .setColor("title", "#8015EA")
   .setColor("avatar", "#8015EA")
-  .setBackground("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9o6Xig_RmaDhX_5hDWnsm0UPMJIZPnpaTMNEN0gL2cyZDuq7rIDz6gINj&s=10")
+  .setBackground("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJOP9RorHQ1OkTW0uYmOkNkBOkvIreWirvug&usqp=CAU")
   .toAttachment();
- buff = await image.toBuffer()
-teks = `@${mem.split("@")[0]} Keluar Dari Group ${groupM.subject}`
- conn.sendButtonLoc(jid, buff, teks, userbot.packname, 'Selamat tinggal', 'say goodbye')
-    } catch (e) {
-    console.log(e) 
-    }
- break
-   case "add":
-    try {
-let imaged = await new Canvas.Welcome()
-  .setUsername(`${await conn.getName(mem)}`)
-  .setDiscriminator(`${groupM.participants.length}`)
-  .setMemberCount(`${groupM.participants.length}`)
-  .setGuildName(`${groupM.subject}`)
-  .setAvatar(`${imgnye}`)
+  teks = `@${mem.split("@")[0]} Keluar Dari Group ${groupM.subject}`
+ Ft.fs.writeFileSync("./lev.jpg", image.toBuffer())
+conn.sendFile(m.chat, Ft.fs.readFileSync("./lev.jpg"), "lv.jpg", teks, {contextInfo: {"mentionedJid": conn.parseMention(teks)}})
+break
+case 'add' : 
+let mage = await new Canvas.Welcome()
+  .setUsername(encodeURI(await conn.getName(mem)))
+  .setDiscriminator(groupM.participants.length)
+  .setMemberCount(groupM.participants.length)
+  .setGuildName(encodeURI(groupM.subject))
+  .setAvatar(img)
   .setColor("border", "#8015EA")
   .setColor("username-box", "#8015EA")
   .setColor("discriminator-box", "#8015EA")
   .setColor("message-box", "#8015EA")
   .setColor("title", "#8015EA")
   .setColor("avatar", "#8015EA")
-  .setBackground("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9o6Xig_RmaDhX_5hDWnsm0UPMJIZPnpaTMNEN0gL2cyZDuq7rIDz6gINj&s=10")
+  .setBackground("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJOP9RorHQ1OkTW0uYmOkNkBOkvIreWirvug&usqp=CAU")
   .toAttachment();
- buff = await imaged.toBuffer()
- teks = `@${mem.split("@")[0]} Bergabung dalam Group ${groupM.subject}`
- conn.sendButtonLoc(jid, buff, teks, userbot.packname, 'Selamat Datang', 'say welcome')
-    } catch (e) {
-    console.log(e) 
-    }
- break
+  teks = `@${mem.split("@")[0]} Keluar Dari Group ${groupM.subject}`
+conn.sendFile(m.chat, mage.toBuffer(), "wel.jpg", teks, {contextInfo: {"mentionedJid": conn.parseMention(teks)}})
+break
 }
 }
 }
