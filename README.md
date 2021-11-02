@@ -18,6 +18,13 @@ Script ini dirancang untuk pengguna rdp/Nodejs/Linux/Railway/heroku
 # Join Group
 [![Group Bot](https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/EBI5SZfyE8Z6i4UJpcs9Tl)
 
+# Deploy To Heroku
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Arifirazzaq2001/RIXLE-BOT-V3)
+# 📦 BuildPack
+* [`ffmpeg`](https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest)
+* [`imagemagick`](https://github.com/rocketmobile/heroku-buildpack-imagemagick)
+* [`puppeteer`](https://github.com/jontewks/puppeteer-heroku-buildpack)
+
 # ONLY RUN RAILWAY
 [`railway.app`](https://railway.app/new/github)
 ## REST API
