@@ -3,7 +3,8 @@ userbot = {
   MONGO_URI: "mongodb+srv://zanDb:veth0581@cluster0.eyx0e.mongodb.net/<mydb>?retryWrites=true&w=majority",
    mess: {
    wait: "tunggu sedang di proses...",
-   error: "errorr!!"
+   error: "error!!",
+   success: "success!!"
    },
    prefix: ["/"],
    gexp: 50,
