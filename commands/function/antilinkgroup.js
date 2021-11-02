@@ -12,7 +12,6 @@ await conn.groupRemove(m.chat, [m.sender])
 }
 }
 }
-
 function getGroupAdmin(participants) {
 	admins = []
 	for (let i of participants) {
