@@ -5,17 +5,17 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Rizxyu/RIXLE-BOT.git"
+    "url": "git+https://github.com/Arifirazzaq2001/RIXLE-BOT-V3.git"
   },
   "keywords": [
     "whatsapp-bot"
   ], 
-  "author": "rizky",
+  "author": "Arifi Razzaq",
   "bugs": {
-    "url": "https://github.com/Rizxyu/RIXLE-BOT/issues"
+    "url": "https://github.com/Arifirazzaq2001/RIXLE-BOT-V3/issues"
   },
   "dependencies": {
-    "@adiwajshing/baileys": "^3.5.2",
+    "@adiwajshing/baileys": "github:adiwajshing/baileys",
     "awesome-phonenumber": "^2.64.0",
     "axios": "^0.23.0",
     "brainly-scraper": "^1.0.3",
