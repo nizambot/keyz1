@@ -11,8 +11,12 @@
 </p>
 </div>
 
+```js
+Script ini dirancang untuk pengguna rdp/Nodejs/Linux/Railway/heroku
+```
+
 # Join Group
-[![Group Bot](https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/JFqb84LyIhfJJxFsKc3apI)
+[![Group Bot](https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/EBI5SZfyE8Z6i4UJpcs9Tl)
 
 # ONLY RUN RAILWAY
 [`railway.app`](https://railway.app/new/github)
@@ -23,33 +27,8 @@
 
 Edit the required value in [`config.js`](https://github.com/Rizxyu/RIXLE-BOT/blob/main/config.js)
 
-```js
-userbot = {
- owner: [
-  "6281261324817",
-  "62822980698995", 
-  "436504463151666",
-  "6282328303332",
-  "62823283033323"
-  ],
-  mess: {
-   wait: "tunggu sedang di proses...",
-   error: "errorr!!"
-   },
-   prefix: ["/"],
-   gexp: 50,
-   packname: "RIXLE-BOT OFFICIAL",
-   author: 'Arifi Razzaq',
+Create a new account at [`monggodb`](https://www.mongodb.com/cloud/atlas/register)
 
-    setting: {
-    admin: "only admin",
-    group: "only group",
-    owner: "owner only pack",
-    jadibot: "jadibot only",
-    botadmin: "bot harus menjadi admin"
-    }
-}
-```
 
 # KHUSUS TERMUX↓
 [`githubdl`](https://github.com/Fau-Zan/Rixle-botV2)
@@ -63,7 +42,14 @@ userbot = {
 | ------------- | ------------- |
 | Anti Toxic|✅|
 | Anti Troli|✅|
+| Anti Virtex|✅|
+| Anti Spam|✅|
 | Anti Link Group|✅|
+| Anti Link Telegram|✅|
+| Anti Link Youtube Channel|✅|
+| Anti Link Youtube Video|✅|
+| Anti Link Instagram|✅|
+| Auto Sticker|✅| 
 | Anonymous Chat|✅|
 
 | GRUP |👥|
@@ -73,17 +59,23 @@ userbot = {
 | open gc|✅|
 | Close gc|✅|
 | absen|✅|
+| Tagall|✅|
+| Hidetag|✅|
 
 | download |🎵|
 | ------------- | ------------- |
 | play|✅|
 | yta|✅|
 | ytv|✅|
-| tiktok |✅|
+| tiktok|✅|
+| Instagram|✅|
+| Twitter|✅|
 
 | islami |🕌|
 | ------------- | ------------- |
-| Surah <ayat> | ✅|
+| Surah <ayat>| ✅|
+| Kisah Nabi|✅|
+| Jadwal Sholat|✅|
 
 | OTHER |🤗|
 | ------------- | ------------- |
@@ -92,11 +84,17 @@ userbot = {
 | Google search|✅|
 | Sticker|✅|
 
-# 👥My Team 
+| SPECIAL |🔰|
+| ------------- | ------------- |
+| Bantuan Command |𝗧𝗲𝗿𝘀𝗲𝗱𝗶𝗮|
+| Auto Setbio |𝗧𝗲𝗿𝘀𝗲𝗱𝗶𝗮|
+| Menyapa Anggota Grup |𝗧𝗲𝗿𝘀𝗲𝗱𝗶𝗮|
+
+# [`👥My Team`](https://chat.whatsapp.com/D75oLHFNUXQCenRThcKUD1)
 * [`Fauzan (Dev)`](https://github.com/Fau-Zan)
 * [`Ivan (Dev)`](https://github.com/ivan-MLN)
 * [`Sanz (Dev)`](https://github.com/sanzgantengz)
 * [`Rizky (Dev)`](https://github.com/Rizxyu)
 * [`Arifi Razzaq (Dev)`](https://github.com/Arifirazzaq2001)
-* [`Oreki (Contributor)`](https://github.com/Oreki-san)
-* [`ＲｉｘｌｅＢoｔ (bot)`](https://wa.me/6281261324817)
+* [`O r e k i (Contributor)`](https://github.com/Oreki-san)
+* [`ＲｉｘｌｅＢoｔ (Robot)`](https://wa.me/62823283033323)
