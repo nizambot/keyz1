@@ -4,7 +4,8 @@ userbot = {
    mess: {
    wait: "tunggu sedang di proses...",
    error: "error!!",
-   success: "success!!"
+   success: "success!!", 
+   jdje: "jshsh"
    },
    prefix: ["/"],
    gexp: 50,
@@ -23,6 +24,7 @@ userbot = {
     nsfw: "FITUR BELUM DIAKTIFKAN!"
     }
 }
+
 module.exports = userbot
 
 
