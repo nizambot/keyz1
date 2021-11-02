@@ -61,10 +61,7 @@ fs.writeFileSync('./session.json', JSON.stringify(authInfo, null, '\t'))
 })
 
 setInterval(() => {
- conn.setStatus(`Ｓｔａｔｕｓ Ｂｏｔ:
-› Runtime: ${Ft.count(process.uptime())}
-› Hostname: ${Ft.os.hostname()}
-| BY FEAR TEAM`).catch((_) => _)
+ conn.setStatus(`${Ft.count(process.uptime())} | ${Ft.os.hostname()}`).catch((_) => _)
 },1000)
  require('./src/loader')
 
