@@ -21,7 +21,7 @@ global.antidelete = false
                  global.Public = false
                    global.scrap = require("./Lib/scrape");
 
-conn.version = [2, 2119, 6]
+conn.version = [ 2, 2140, 12 ]
 conn.logger.level = "warn"
 conn.browserDescription = ['R I X L E   B O T', 'EDGE', '94.0.992.50']
 
@@ -61,12 +61,7 @@ fs.writeFileSync('./session.json', JSON.stringify(authInfo, null, '\t'))
 })
 
 setInterval(() => {
- conn.setStatus(`Ｓｔａｔｕｓ Ｂｏｔ:
-› Runtime: ${Ft.count(process.uptime())}
-› Hostname: ${Ft.os.hostname()}
-| BY FEAR TEAM`).catch((_) => _)
-},1000)
- require('./src/loader')
+ conn.setStatus(`${Ft.count(process.uptime())} | ${Ft.os.hostname()}`).catch((_) => _)},1000) require('./src/loader')
  async function run() {// Function biar bisa run bot
  let message = require('./action/chats');
  let action = require('./action/action');
