@@ -1,7 +1,7 @@
 module.exports = { 
 name: "antilinkinstagram", //By @arifirazzaq2001
 async functions(m) { 
-const gMdata = m.isGroup ? await conn.groupMetadata(from) : ''
+const gMdata = m.isGroup ? await conn.groupMetadata(m.chat) : ''
 const grupAdmin = m.isGroup ? getGroupAdmin(gMdata.participants) : ''
 const isAdmin = grupAdmin.includes(m.sender)
  if (m.message || m.text.includes("https://instagram.com/")) {
