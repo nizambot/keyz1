@@ -1,5 +1,5 @@
 module.exports = { 
-name: "antilinktelegram", //@arifirazzaq2001
+name: "antilinktelegram", //By @arifirazzaq2001
 async functions(m) { 
 const gMdata = m.isGroup ? await conn.groupMetadata(from) : ''
 const grupAdmin = m.isGroup ? getGroupAdmin(gMdata.participants) : ''
