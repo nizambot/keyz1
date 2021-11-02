@@ -32,6 +32,7 @@ console.log(
       conn.logger.warn("[!] Scan Kode QR Diatas, Expired dalam 30 detik")
     )
 })
+
 conn.on('credentials-updated', () => {
         conn.logger.warn('credentials updated!')
         })
