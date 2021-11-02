@@ -7,7 +7,7 @@ const isAdmin = grupAdmin.includes(m.sender)
  if (m.message || m.text.includes("https://chat.whatsapp.com/")) {
  if (m.sender === conn.user.jid) return
  if (m.sender === isAdmin) return
-m.reply(`Maaf @${m.sender.split("@")[0]} *Anti Link Group Terdeteksi!* \n_Anda Di Keluarkan._`)
+m.reply(`Maaf @${m.sender.split("@")[0]} *Anti Link Group Terdeteksi!* \n_Maaf Anda Di Keluarkan._`)
 await conn.groupRemove(m.chat, [m.sender])
 }
 }
