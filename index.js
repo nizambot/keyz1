@@ -32,7 +32,6 @@ console.log(
       conn.logger.warn("[!] Scan Kode QR Diatas, Expired dalam 30 detik")
     )
 })
-
 conn.on('credentials-updated', () => {
         conn.logger.warn('credentials updated!')
         })
@@ -50,15 +49,22 @@ const authInfo = conn.base64EncodedAuthInfo()
 conn.on("ws-close", async() => {
         conn.logger.warn('Connected Timeout')
         })
+conn.on("close", async() => {
+        conn.logger.warn('Closed Connection')
+        })
+conn.on("open", () => {
+        conn.longger.warn('reopen docs!')
+        })
 
 console.log(stats)
 fs.writeFileSync('./session.json', JSON.stringify(authInfo, null, '\t'))
 })
 
 setInterval(() => {
- conn.setStatus(`› Runtime: ${Ft.count(process.uptime())}
+ conn.setStatus(`Ｓｔａｔｕｓ Ｂｏｔ:
+› Runtime: ${Ft.count(process.uptime())}
 › Hostname: ${Ft.os.hostname()}
-| Road To 30 Juz ─ Pejuang Sholawat`).catch((_) => _)
+| BY FEAR TEAM`).catch((_) => _)
 },1000)
  require('./src/loader')
  async function run() {// Function biar bisa run bot
