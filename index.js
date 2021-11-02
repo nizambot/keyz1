@@ -50,12 +50,7 @@ const authInfo = conn.base64EncodedAuthInfo()
 conn.on("ws-close", async() => {
         conn.logger.warn('Connected Timeout')
         })
-conn.on("close", async() => {
-        conn.logger.warn('Closed Connection')
-        })
-conn.on("open", () => {
-        conn.longger.warn('reopen docs!')
-        })
+
 console.log(stats)
 fs.writeFileSync('./session.json', JSON.stringify(authInfo, null, '\t'))
 })
