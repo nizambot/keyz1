@@ -4,21 +4,15 @@ admin: true,
 botAdmin: true,
 
 async functions(m) { 
+const { getGroupAdmin } = './adminbot'
 const gMdata = m.isGroup ? await conn.groupMetadata(m.chat) : '' //Fixed by @arifirazzaq2001
 const grupAdmin = m.isGroup ? getGroupAdmin(gMdata.participants) : ''
 const isAdmin = grupAdmin.includes(m.sender)
+const isGroupAdmins = getGroupAdmin.includes(m.sender) || false
 
  if (m.text.includes("https://chat.whatsapp.com/")) { //Fixed by @arifirazzaq2001
  if (m.sender === conn.user.jid) return
  if (m.sender === isAdmin) return
-function getGroupAdmin(participants) {
-	admins = []
-	for (let i of participants) {
-		i.isAdmin ? admins.push(i.jid) : ''
-	}
-	return admins
-}
-const isGroupAdmins = getGroupAdmin.includes(m.sender) || false
  if (m.sender === isGroupAdmins) return m.reply("Bot Bukan Admin")
 m.reply(`Maaf @${m.sender.split("@")[0]} *Anti Link Group Terdeteksi!* \n_Maaf Anda Di Keluarkan._`)
 await conn.groupRemove(m.chat, [m.sender])
