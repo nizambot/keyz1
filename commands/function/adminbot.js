@@ -1,3 +1,4 @@
+module.exports = { 
 async functions(m) { 
 let { conn } = data
 
@@ -9,3 +10,4 @@ exports.getGroupAdmins = function(participants){
 	return admins
 }
 } 
+}
