@@ -7,7 +7,7 @@ async functions(m) {
 const gMdata = m.isGroup ? await conn.groupMetadata(m.chat) : '' //Fixed by @arifirazzaq2001
 const grupAdmin = m.isGroup ? getGroupAdmin(gMdata.participants) : ''
 const isAdmin = grupAdmin.includes(m.sender)
-const groupMembers = m.isGroup ? groupMetadata.participants : ''
+const groupMembers = m.isGroup ? gMdata.participants : ''
 const groupAdmins = m.isGroup ? getGroupAdmins(groupMembers) : ''
 const isGroupAdmins = groupAdmins.includes(m.sender) || false
 
