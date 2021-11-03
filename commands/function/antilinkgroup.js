@@ -3,8 +3,7 @@ name: "antilinkgroup", //By @arifirazzaq2001 Fixed by Ivanzz`
 admin: true,
 botAdmin: true,
 
-async functions(m) { 
-const getGroupAdmin = require ('./adminbot');
+async functions(m) {
 const gMdata = m.isGroup ? await conn.groupMetadata(m.chat) : '' //Fixed by @arifirazzaq2001
 const grupAdmin = m.isGroup ? getGroupAdmin(gMdata.participants) : ''
 const isAdmin = grupAdmin.includes(m.sender)
