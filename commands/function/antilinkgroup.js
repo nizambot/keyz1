@@ -17,8 +17,8 @@ const isBotGroupAdmins = groupAdmins.includes(botNumber) || false
  if (m.text.includes("https://chat.whatsapp.com/")) { //Fixed by @arifirazzaq2001
  if (m.sender === conn.user.jid) return
  if (m.sender === isAdmin) return
- if (m.sender === isGroupAdmins) return m.reply("Admin Bebas")
- if (!isBotGroupAdmins) return m.reply("Bot Bukan Admin")
+ if (!isGroupAdmins) return m.reply("Admin Bebas")
+ if (!isBotGroupAdmins) return
 m.reply(`Maaf @${m.sender.split("@")[0]} *Anti Link Group Terdeteksi!* \n_Maaf Anda Di Keluarkan._`)
 await conn.groupRemove(m.chat, [m.sender])
 }
