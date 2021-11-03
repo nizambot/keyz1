@@ -8,7 +8,9 @@ const getGroupAdmin = require ('./adminbot');
 const gMdata = m.isGroup ? await conn.groupMetadata(m.chat) : '' //Fixed by @arifirazzaq2001
 const grupAdmin = m.isGroup ? getGroupAdmin(gMdata.participants) : ''
 const isAdmin = grupAdmin.includes(m.sender)
-const isGroupAdmins = getGroupAdmin.includes(m.sender) || false
+const groupMembers = m.isGroup ? groupMetadata.participants : ''
+const groupAdmins = m.isGroup ? getGroupAdmins(groupMembers) : ''
+const isGroupAdmins = groupAdmins.includes(m.sender) || false
 
  if (m.text.includes("https://chat.whatsapp.com/")) { //Fixed by @arifirazzaq2001
  if (m.sender === conn.user.jid) return
