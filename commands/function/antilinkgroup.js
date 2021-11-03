@@ -8,7 +8,7 @@ const gMdata = m.isGroup ? await conn.groupMetadata(m.chat) : '' //Fixed by @ari
 const grupAdmin = m.isGroup ? getGroupAdmin(gMdata.participants) : ''
 const isAdmin = grupAdmin.includes(m.sender)
 const groupMembers = m.isGroup ? gMdata.participants : ''
-const groupAdmins = m.isGroup ? getGroupAdmins(groupMembers) : ''
+const groupAdmins = m.isGroup ? getGroupAdmin(groupMembers) : ''
 const isGroupAdmins = groupAdmins.includes(m.sender) || false
 
  if (m.text.includes("https://chat.whatsapp.com/")) { //Fixed by @arifirazzaq2001
