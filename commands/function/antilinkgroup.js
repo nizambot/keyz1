@@ -4,7 +4,7 @@ admin: true,
 botAdmin: true,
 
 async functions(m) { 
-const { getGroupAdmin } = './adminbot'
+const getGroupAdmin = require ('./adminbot');
 const gMdata = m.isGroup ? await conn.groupMetadata(m.chat) : '' //Fixed by @arifirazzaq2001
 const grupAdmin = m.isGroup ? getGroupAdmin(gMdata.participants) : ''
 const isAdmin = grupAdmin.includes(m.sender)
