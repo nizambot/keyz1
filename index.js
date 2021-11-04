@@ -24,14 +24,12 @@ global.scrap = require("./Lib/scrape");
 
 conn.version = [ 2, 2140, 12 ]
 conn.logger.level = "warn"
-conn.browserDescription = ['ʀɪ𝐱ʟᴇ-ʙᴏᴛ 𝔖Ⅲ', 'SAFARI', '8.1']
+conn.browserDescription = ['rixle bot', 'SAFARI', '8.1']
 
 if (fs.existsSync(global.write.words.qrcode)) conn.loadAuthInfo(global.write.words.qrcode)
 conn.on('qr', qr => {
 qrcode.generate(qr, { small: true })
-console.log(
-      conn.logger.warn("[!] Scan Kode QR Diatas, Expired dalam 30 detik")
-    )
+conn.logger.warn("[!] Scan Kode QR Diatas, Expired dalam 30 detik")
 })
 conn.on('credentials-updated', () => {})
 conn.on('connecting', () => {})
