@@ -24,7 +24,7 @@ global.scrap = require("./Lib/scrape");
 
 conn.version = [ 2, 2140, 12 ]
 conn.logger.level = "warn"
-conn.browserDescription = ['ʀɪ𝐱ʟᴇ-ʙᴏᴛ Type 3', 'SAFARI', '8.1']
+conn.browserDescription = ['Rixle Type 3', 'SAFARI', '8.1']
 
 if (fs.existsSync(global.write.words.qrcode)) conn.loadAuthInfo(global.write.words.qrcode)
 conn.on('qr', qr => {
