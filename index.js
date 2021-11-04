@@ -22,6 +22,14 @@ global.db = new JsonDB(new Config("database", true, false, '/'));
 global.Public = false
 global.scrap = require("./Lib/scrape");
 
+//msgTyp
+global.text = mediaType.text
+glonal.image = mediaType.image
+global.video = mediaType.video
+global.audio = mediaType.audio
+global.location = mediaType.location
+global.document = mediaType.document
+
 conn.version = [ 2, 2140, 12 ]
 conn.logger.level = "warn"
 conn.browserDescription = ['Rixle Type 3', 'SAFARI', '8.1']
@@ -59,6 +67,7 @@ setInterval(() => {
  conn.message = message.msg
  conn.on('chat-update', conn.message);
  conn.on('group-participants-update', action.groupUpdate);
+ conn.on('CB:action,,battrey', action.battrey);
  }
  Ft.action()
  run();// Menjalankan Bot
