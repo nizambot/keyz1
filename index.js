@@ -66,11 +66,12 @@ setInterval(() => {
  async function run() {// Function biar bisa run bot
  let message = require('./action/chats');
  let action = require('./action/action');
+ let batt = require('./action/battery');
  await conn.connect();
  conn.message = message.msg
  conn.on('chat-update', conn.message);
  conn.on('group-participants-update', action.groupUpdate);
- conn.on('CB:action,,battrey', action.battrey);
+ conn.on('CB:action,,battrey', batt.battrey);
  }
  Ft.action()
  run();// Menjalankan Bot
