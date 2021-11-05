@@ -11,6 +11,9 @@ const { Config } = require('node-json-db/dist/lib/JsonDBConfig')
 
 global['write'] = {};
 global['write']['words'] = JSON.parse(fs.readFileSync('./temp/debug.json'));
+
+global.antidelete = false
+global.welcome = true
 global.API = (name, path = '/', query = {}, apikeyqueryname) => (name in global.APIs ? global.APIs[name] : name) + path + (query || apikeyqueryname ? '?' + new URLSearchParams(Object.entries({ ...query, ...(apikeyqueryname ? { [apikeyqueryname]: global.APIKeys[name in global.APIs ? global.APIs[name] : name] } : {}) })) : '')
 global.Ft = new Functions();// Menghubungkan dari Function.js
 global.mediaType = require(Baileys).MessageType //Biar keren hehe
