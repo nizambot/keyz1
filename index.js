@@ -27,7 +27,7 @@ global.scrap = require("./Lib/scrape");
 
 //msgTyp
 global.text = mediaType.text
-glonal.image = mediaType.image
+global.image = mediaType.image
 global.video = mediaType.video
 global.audio = mediaType.audio
 global.location = mediaType.location
