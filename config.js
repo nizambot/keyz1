@@ -1,3 +1,4 @@
+const fs = require("fs")
 userbot = {
 Prem: JSON.parse(fs.readFileSync('./db/premium.json')),
  owner: [ "6281261324817", "62895-6229-34562" ],
