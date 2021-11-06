@@ -11,7 +11,7 @@ RUN apt-get update && \
   rm -rf /var/lib/apt/lists/*
 
 COPY package.json .
-RUN npm install -g npm@latest
+RUN npm install -g npm@8.1.3
 RUN npm install
 RUN npm install pm2 -g
 ENV PM2_PUBLIC_KEY wenkiew197dvcw4
