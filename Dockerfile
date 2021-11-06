@@ -1,19 +1,25 @@
-FROM node:16.13.0
+FROM node:16.6.1-buster
 
 RUN apt-get update && \
   apt-get install -y \
   neofetch \
+  chromium \
   ffmpeg \
   wget \
-  #chromium \ kalau mau make puppeteer :v
+  mc \
   imagemagick && \
   rm -rf /var/lib/apt/lists/*
 
 COPY package.json .
-RUN npm i -g npm@latest
-RUN npm i
+RUN npm install -g npm@latest
+RUN npm install
+RUN npm install pm2 -g
+ENV PM2_PUBLIC_KEY wenkiew197dvcw4
+ENV PM2_SECRET_KEY ucswzguxfxhig3c
+
 
 COPY . .
+
 EXPOSE 5000
 
-CMD ["node", "index.js"]`
+CMD ["pm2-runtime", "index.js"]`
