@@ -2,11 +2,13 @@ FROM node:16.6.1-buster
 
 RUN apt-get update && \
   apt-get install -y \
+
   neofetch \
   chromium \
   ffmpeg \
   wget \
   mc \
+  utils \
   imagemagick && \
   rm -rf /var/lib/apt/lists/*
 
