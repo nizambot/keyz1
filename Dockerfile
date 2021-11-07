@@ -1,8 +1,8 @@
 FROM node:16.6.1-buster
 
-RUN apt-get update && \
-  apt-get upgrade && \
-  apt-get install -y \
+RUN apt-get update -y \
+RUN apt-get upgrade -y \
+RUN apt-get install -y \
 
   neofetch \
   chromium \
@@ -13,6 +13,7 @@ RUN apt-get update && \
   rm -rf /var/lib/apt/lists/*
 
 COPY package.json .
+
 RUN npm install -g npm@8.1.3
 RUN npm install
 RUN npm install pm2 -g
