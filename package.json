@@ -1,7 +1,7 @@
 {
   "name": "Rixle Bot",
   "version": "1.8.1",
-  "description": "WhatsApp Bot Ringan",
+  "description": "WhatsApp Bot Nodejs",
   "main": "index.js",
   "repository": {
     "type": "git",
