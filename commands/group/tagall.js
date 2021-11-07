@@ -3,7 +3,6 @@ module.exports = {
 name: ["tagall"],
 type: ["group"],
 description: "tag",
-admin: true,
 utilisation: "#tagall",
 async execute(m) {
 let { conn, text } = data
