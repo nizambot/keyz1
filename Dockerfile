@@ -8,7 +8,7 @@ RUN apt-get update && \
   ffmpeg \
   wget \
   mc \
-  utils \
+  utils && \
   imagemagick && \
   rm -rf /var/lib/apt/lists/*
 
