@@ -60,7 +60,6 @@ setInterval(() => {
  conn.setStatus(`${Ft.count(process.uptime())} | ${Ft.os.hostname()} 𝐑𝐨𝐚𝐝 𝐓𝐨 𝟑𝟎 𝐉𝐮𝐳 🍂 | 𝐏𝐞𝐣𝐮𝐚𝐧𝐠 𝐒𝐡𝐨𝐥𝐚𝐰𝐚𝐭`).catch((_) => _)
 },1000)
  require('./src/loader');
-
  async function run() {// Function biar bisa run bot
  let message = require('./action/chats');
  let action = require('./action/action');
