@@ -16,8 +16,8 @@ COPY package.json .
 RUN npm install -g npm@8.1.3
 RUN npm install
 RUN npm install pm2 -g
-ENV PM2_PUBLIC_KEY wenkiew197dvcw4
-ENV PM2_SECRET_KEY ucswzguxfxhig3c
+ENV PM2_PUBLIC_KEY cygkc3bz1dww20f
+ENV PM2_SECRET_KEY r5nhytflswo1ly3
 
 
 COPY . .
