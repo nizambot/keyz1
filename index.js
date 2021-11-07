@@ -10,20 +10,19 @@ const { JsonDB } = require("node-json-db")
 const { Config } = require('node-json-db/dist/lib/JsonDBConfig')
 
 global['write'] = {};
-global['write']['words'] = JSON.parse(fs.readFileSync('./temp/debug.json'));
-
-global.antidelete = false
-global.welcome = true
-global.API = (name, path = '/', query = {}, apikeyqueryname) => (name in global.APIs ? global.APIs[name] : name) + path + (query || apikeyqueryname ? '?' + new URLSearchParams(Object.entries({ ...query, ...(apikeyqueryname ? { [apikeyqueryname]: global.APIKeys[name in global.APIs ? global.APIs[name] : name] } : {}) })) : '')
-global.Ft = new Functions();// Menghubungkan dari Function.js
-global.mediaType = require(Baileys).MessageType //Biar keren hehe
-global.conn = new WAConnection(); //Wa Connect dari baileys
-global.botuser = require('./config')//Menghubungkan Ke Connection string
-global.Events = {}
-global.baileys = Baileys //Hehe
-global.db = new JsonDB(new Config("database", true, false, '/'));
-global.Public = false
-global.scrap = require("./Lib/scrape");
+ global['write']['words'] = JSON.parse(fs.readFileSync('./tmp/debug.json'));
+  global.antidelete = false
+   global.welcome = true
+    global.API = (name, path = '/', query = {}, apikeyqueryname) => (name in global.APIs ? global.APIs[name] : name) + path + (query || apikeyqueryname ? '?' + new URLSearchParams(Object.entries({ ...query, ...(apikeyqueryname ? { [apikeyqueryname]: global.APIKeys[name in global.APIs ? global.APIs[name] : name] } : {}) })) : '')
+     global.Ft = new Functions(); // Menghubungkan dari Function.js
+      global.mediaType = require(Baileys).MessageType //Biar keren hehe
+       global.conn = new WAConnection(); //Wa Connect dari baileys
+        global.botuser = require('./config') //Menghubungkan Ke Connection string
+         global.Events = {}
+          global.baileys = Baileys //Hehe
+           global.db = new JsonDB(new Config("database", true, false, '/'));
+            global.Public = false
+             global.scrap = require("./Lib/scrape");
 
 //msgTyp
 global.text = mediaType.text
@@ -39,7 +38,6 @@ conn.browserDescription = ['Rixle Type 3', 'SAFARI', '8.1']
 
 if (fs.existsSync(global.write.words.qrcode)) conn.loadAuthInfo(global.write.words.qrcode)
 conn.on('qr', qr => {
-qrcode.generate(qr, { small: true })
 conn.logger.warn("[!] Scan Kode QR Diatas, Expired dalam 30 detik")
 })
 conn.on('credentials-updated', () => {})
