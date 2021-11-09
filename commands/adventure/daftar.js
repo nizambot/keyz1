@@ -21,8 +21,8 @@ let { conn, args } = data
         }
         const buatCekPlayernya = (sender) => {
             let status = false
-            Object.keys(_player).forEach((i) => {
-                if (_player[i].id === m.sender) {
+            Object.keys(m._player).forEach((i) => {
+                if (m._player[i].id === m.sender) {
                     status = true
                 }
             })
