@@ -2,7 +2,6 @@ const fs = require ('fs')
 const crypto = require('crypto')
 const request = require('request')
 const fetch = require('node-fetch')
-const _player = fs.readFileSync('./tmp/adventureDB/player.json')
 
 module.exports = { // By @arifirazzaq2001
 name: ["daftar"],
@@ -32,14 +31,14 @@ let { conn, args } = data
 const gMdata = m.isGroup ? await conn.groupMetadata(m.chat) : ''
 const grupAdmin = m.isGroup ? getGroupAdmin(gMdata.participants) : ''
 const isAdmin = grupAdmin.includes(m.sender)
-const isPlayer = _player.includes(m.sender)
+const _player = JSON.parse(fs.readFileSync('./tmp/adventureDB/player.json')) 
 const iscekplayer = buatCekPlayernya(m.sender)
 let setPin = kodePinPlayer(6)
 
+if (_player.includes(m.sender)) {
+if (iscekplayer) return m.reply('Anda Sudah Terdaftar Sebelumnya.') 
 if (m.sender === conn.user.jid) return
 if (m.sender === isAdmin) return
-if (iscekplayer) return m.reply('Anda Sudah Terdaftar Sebelumnya.') 
-let stickGame = m.sender
 
 _player.push(m.sender)
 fs.writeFileSync('./tmp/adventureDB/player.json', JSON.stringify(_player))
@@ -66,6 +65,7 @@ m.reply(teks)
 console.log(`${m.pushname} Berhasil Membuat Json Player Games`)
 } 
 } 
+}
 
 function getGroupAdmin(participants) {
 	admins = []
