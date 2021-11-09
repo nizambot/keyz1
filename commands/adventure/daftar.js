@@ -31,11 +31,10 @@ let { conn, args } = data
 const gMdata = m.isGroup ? await conn.groupMetadata(m.chat) : ''
 const grupAdmin = m.isGroup ? getGroupAdmin(gMdata.participants) : ''
 const isAdmin = grupAdmin.includes(m.sender)
-const _player = fs.readFileSync('./tmp/adventureDB/player.json')
 const iscekplayer = buatCekPlayernya(m.sender)
 let setPin = kodePinPlayer(6)
 
-if (_player.includes(m.sender)) {
+if (m._player.includes(m.sender)) {
 if (iscekplayer) return m.reply('Anda Sudah Terdaftar Sebelumnya.') 
 if (m.sender === conn.user.jid) return
 if (m.sender === isAdmin) return
