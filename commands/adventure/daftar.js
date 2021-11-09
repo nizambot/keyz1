@@ -2,7 +2,7 @@ const fs = require ('fs')
 const crypto = require('crypto')
 const request = require('request')
 const fetch = require('node-fetch')
-const _player = fs.readFileSync('./tmp/adventureDB/player.json')
+const _player = fs.writeFileSync('./tmp/adventureDB/player.json')
 
 module.exports = { // By @arifirazzaq2001
 name: ["daftar"],
@@ -34,11 +34,9 @@ const isPlayer = _player.includes(m.sender)
 const iscekplayer = buatCekPlayernya(m.sender)
 let setPin = kodePinPlayer(6)
 
-try {
 if (m.sender === conn.user.jid) return
 if (m.sender === isAdmin) return
 if (iscekplayer) return m.reply('Anda Sudah Terdaftar Sebelumnya.') 
-let img =  ( await fetch('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc675b80s5tCNwEdtfTpmfebv1uUlk4f2huA&usqp=CAU')).buffer()
 let stickGame = m.sender
 
 _player.push(m.sender)
@@ -62,7 +60,7 @@ let teks = ` _made in @arifirazzaq2001_
 Jadi Jangan Sampai Hilang Saya Sarankan Anda Menyalinnya Kedalam Catatan Anda/Kasih Tanda Bintang 🌟 Pesan Ini, Atau Ketik ${userbot.prefix}cekpin*
 「 RIXLE-BOT 」*
 `
-conn.sendMessage(m.chat, img, MessageType.image, { 
+conn.sendMessage(m.chat, ( await fetch('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc675b80s5tCNwEdtfTpmfebv1uUlk4f2huA&usqp=CAU')).buffer(), MessageType.image, { 
 caption: teks, 
  quoted: m, 
   contextInfo: { 
@@ -70,11 +68,8 @@ caption: teks,
       }
     }) 
 console.log(`${m.pushname} Berhasil Membuat Json Player Games`)
-} catch (e) {
-console.log(e)
 } 
 } 
-}
 
 function getGroupAdmin(participants) {
 	admins = []
