@@ -20,9 +20,9 @@ let groupM = await conn.groupMetadata(member.jid)
 let mem = member.participants[0]
 let action = member.action
 try {
-let img = Ft.getBuffer(await conn.getProfilePicture(mem))
+var img = Ft.getBuffer(await conn.getProfilePicture(mem))
 } catch {
-img = await (await fetch('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa1pVfdb1zUoSve4Unc08jl5BpCHwfys8qxA&usqp=CAU')).buffer()
+var img = await (await fetch('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa1pVfdb1zUoSve4Unc08jl5BpCHwfys8qxA&usqp=CAU')).buffer()
 }
 switch (action) {
 case 'remove': 
