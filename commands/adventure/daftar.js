@@ -60,7 +60,14 @@ let teks = ` _made in @arifirazzaq2001_
 Jadi Jangan Sampai Hilang Saya Sarankan Anda Menyalinnya Kedalam Catatan Anda/Kasih Tanda Bintang 🌟 Pesan Ini, Atau Ketik ${userbot.prefix}cekpin*
 「 RIXLE-BOT 」*
 `
-conn.sendMessage(m.chat, await(await fetch('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc675b80s5tCNwEdtfTpmfebv1uUlk4f2huA&usqp=CAU')).buffer), `${teks}`.message.id
+conn.sendMessage(m.chat, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc675b80s5tCNwEdtfTpmfebv1uUlk4f2huA&usqp=CAU', MessageType.image, 
+{
+caption: teks, 
+ quoted: m, 
+  contextInfo: { 
+      mentionedJid: [m.sender] 
+      }
+    }
 console.log(`${m.pushname} Berhasil Membuat Json Player Games`)
 } 
 } 
