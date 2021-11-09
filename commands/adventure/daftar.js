@@ -2,7 +2,7 @@ const fs = require ('fs')
 const crypto = require('crypto')
 const request = require('request')
 const fetch = require('node-fetch')
-const _player = JSON.parse(fs.readFileSync('./tmp/adventureDB/player.json'))
+const _player = fs.readFileSync('./tmp/adventureDB/player.json')
 
 module.exports = { // By @arifirazzaq2001
 name: ["daftar"],
