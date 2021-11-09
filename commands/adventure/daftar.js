@@ -13,8 +13,8 @@ async execute(m) {
 let { conn, args } = data
         const addPlayerUser = (userid, sender, serials) => {
             const obj = { id: userid, name: m.sender, serial: serials }
-            _player.push(obj)
-            fs.writeFileSync('./tmp/adventureDB/player.json', JSON.stringify(_player))
+            m._player.push(obj)
+            fs.writeFileSync('./tmp/adventureDB/player.json', JSON.stringify(m._player))
         }
         const kodePinPlayer = (size) => {
             return crypto.randomBytes(size).toString('hex').slice(0, size)
@@ -39,8 +39,8 @@ if (iscekplayer) return m.reply('Anda Sudah Terdaftar Sebelumnya.')
 if (m.sender === conn.user.jid) return
 if (m.sender === isAdmin) return
 
-_player.push(m.sender)
-fs.writeFileSync('./tmp/adventureDB/player.json', JSON.stringify(_player))
+m._player.push(m.sender)
+fs.writeFileSync('./tmp/adventureDB/player.json', JSON.stringify(m._player))
 fs.writeFileSync('./tmp/adventureDB/pin.json', JSON.stringify(setPin))
 addPlayerUser(m.sender, kodePinPlayer)
 let teks = ` _made in @arifirazzaq2001_
@@ -51,7 +51,7 @@ let teks = ` _made in @arifirazzaq2001_
 *Nama :* ${m.pushname}
 *APi :* wa.me/${m.sender.split('@')[0]}
 *Kode Pin :* ${setPin}
-*total Player :* ${_player.length}
+*total Player :* ${m._player.length}
 
 *Anda Sudah Resmi Menjadi Pengguna Gamers Dalam RixleBot*
 
