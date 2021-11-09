@@ -141,16 +141,23 @@ exports.WAConnection = _WAConnection => {
      * @param {Object} quoted
      * @param {Object} options
      */
-    async  sendContact(jid, number, name, quoted, options) {
+    async sendContact(jid, number, name, quoted, options) {
       // TODO: Business Vcard
       number = number.replace(/[^0-9]/g, '')
+      let njid = number + '@s.whatsapp.net'
+      let { isBusiness } = await this.isOnWhatsApp(njid) || { isBusiness: false }
       let vcard = `
 BEGIN:VCARD
-FN:${name}
-TEL;waid=${number}:${PhoneNumber('+' + number).getNumber('international')}
+VERSION:3.0
+N:;${name.replace(/\n/g, '\\n')};;;
+FN:${name.replace(/\n/g, '\\n')}
+TEL;type=CELL;type=VOICE;waid=${number}:${PhoneNumber('+' + number).getNumber('international')}${isBusiness ? `
+X-WA-BIZ-NAME:${(this.contacts[njid].vname || this.getName(njid)).replace(/\n/, '\\n')}
+X-WA-BIZ-DESCRIPTION:${((await this.getBusinessProfile(njid)).description || '').replace(/\n/g, '\\n')}
+` : ''}
 END:VCARD
 `.trim()
-      return this.sendMessage(jid, {
+      return await this.sendMessage(jid, {
         displayName: name,
         vcard
       }, MessageType.contact, { quoted, ...options })
@@ -301,7 +308,47 @@ END:VCARD
         ...options
       })
     }
+   /**
+   * SEND BUTTON VIDEO BY RIZKY(RIZXYU)
+   * @param {String} jid
+   * @param {String} url
+   * @param {String} content
+   * @param {String} footer
+   * @param {String} button1
+   * @param {String} row1
+   * @param {String} button2
+   * @param {String} row2
+   * @param {Object} options
+   */
+   async sendButVid(jid, buffer, content, footer, button1, row1, quoted, options = {}) {
+      return await this.sendMessage(jid, {
+        contentText: content,
+        footerText: footer,
+        buttons: [
+          { buttonId: row1, buttonText: { displayText: button1 }, type: 1 }
+        ],
+        headerType: 4,
+        videoMessage: (await this.prepareMessageMedia(buffer, MessageType.video, {})).videoMessage
+      }, MessageType.buttonsMessage, {
+        quoted, ...options
+      })
+    }
     
+    async sendButVid2(jid, buffer, content, footer, button1, row1, button2, row2, quoted, options = {}) {
+      return await this.sendMessage(jid, {
+        contentText: content,
+        footerText: footer,
+        buttons: [
+          { buttonId: row1, buttonText: { displayText: button1 }, type: 1 },
+          { buttonId: row2, buttonText: { displayText: button2 }, type: 1 }
+        ],
+        headerType: 4,
+        videoMessage: (await this.prepareMessageMedia(buffer, MessageType.video, {})).videoMessage
+      }, MessageType.buttonsMessage, {
+        quoted, ...options
+      })
+    }
+
     /**
  * Send Button with Image
  * @param {String} jid
