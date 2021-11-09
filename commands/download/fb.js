@@ -1,4 +1,5 @@
-const toolfb = require("fb-downloads")
+
+const { fbdl } = require('../../Lib/fbdl')
 
 module.exports = {
 name: ["fb"],
@@ -10,12 +11,13 @@ utilisation: userbot.prefix + "fb (url)",
 async execute(m) {
 let { conn, args } = data
 
+try {
 if (!args[0]) return m.reply('urlnya mana')
 if (!args[0].includes("facebook")) return m.reply('url is wrong')
- const videolink = await toolfb.getVideoUrl(args[0])
- conn.sendFile(m.chat, videolink.sd, 'fb.mp4', `link hd: ${videolink.sd}\n\n*Jangan lupa donasi ke owner ya!*`, m)
+ const v = await fbdl(args[0])
+ conn.sendFile(m.chat, v.hasil.link_high, 'fb.mp4', `\n*Berhasil Mendapatkan Video*\n\n⬇️Post by ${v.hasil.author}\n📖desk: ${v.hasil.title}`, m)
+} catch (e) {
+console.log('error Banh')
 }
 }
-/*
-*Anda siapa ya
-*/
+}
