@@ -2,6 +2,7 @@ const fs = require ('fs')
 const crypto = require('crypto')
 const request = require('request')
 const fetch = require('node-fetch')
+let _player = JSON.parse(fs.readFileSync('./tmp/adventureDB/player.json')) 
 
 module.exports = { // By @arifirazzaq2001
 name: ["daftar"],
@@ -11,7 +12,7 @@ async execute(m) {
 let { conn, args } = data
 const sender = m.sender
         const addPlayerUser = (userid, sender, serials) => {
-            const obj = { id: userid, name: sender, serial: serials }
+            const obj = { id: userid, name: m.sender, serial: serials }
             _player.push(obj)
             fs.writeFileSync('./tmp/adventureDB/player.json', JSON.stringify(_player))
         }
@@ -30,7 +31,6 @@ const sender = m.sender
 const gMdata = m.isGroup ? await conn.groupMetadata(m.chat) : ''
 const grupAdmin = m.isGroup ? getGroupAdmin(gMdata.participants) : ''
 const isAdmin = grupAdmin.includes(m.sender)
-const _player = JSON.parse(fs.readFileSync('./tmp/adventureDB/player.json'))
 const isPlayer = _player.includes(m.sender)
 const iscekplayer = buatCekPlayernya(m.sender)
 let setPin = kodePinPlayer(6)
