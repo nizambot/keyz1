@@ -31,7 +31,7 @@ let { conn, args } = data
 const gMdata = m.isGroup ? await conn.groupMetadata(m.chat) : ''
 const grupAdmin = m.isGroup ? getGroupAdmin(gMdata.participants) : ''
 const isAdmin = grupAdmin.includes(m.sender)
-const _player = JSON.parse(fs.readFileSync('./tmp/adventureDB/player.json')) 
+const _player = fs.readFileSync('./tmp/adventureDB/player.json')
 const iscekplayer = buatCekPlayernya(m.sender)
 let setPin = kodePinPlayer(6)
 
