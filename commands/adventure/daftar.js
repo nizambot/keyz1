@@ -7,6 +7,8 @@ const _player = fs.readFileSync('./tmp/adventureDB/player.json')
 module.exports = { // By @arifirazzaq2001
 name: ["daftar"],
 type: ["Petualangan"], 
+description: "Verify Your Account To Playing On games",
+utilisation: userbot.prefix+"daftar",
 
 async execute(m) {
 let { conn, args } = data
