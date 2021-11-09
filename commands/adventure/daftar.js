@@ -2,15 +2,15 @@ const fs = require ('fs')
 const crypto = require('crypto')
 const request = require('request')
 const fetch = require('node-fetch')
-let _player = JSON.parse(fs.readFileSync('./tmp/adventureDB/player.json')) 
+
+const _player = JSON.parse(fs.readFileSync('./tmp/adventureDB/player.json'))
 
 module.exports = { // By @arifirazzaq2001
 name: ["daftar"],
-type: ["Petualangan"],
+type: ["Petualangan"], 
 
 async execute(m) {
 let { conn, args } = data
-const sender = m.sender
         const addPlayerUser = (userid, sender, serials) => {
             const obj = { id: userid, name: m.sender, serial: serials }
             _player.push(obj)
@@ -35,6 +35,7 @@ const isPlayer = _player.includes(m.sender)
 const iscekplayer = buatCekPlayernya(m.sender)
 let setPin = kodePinPlayer(6)
 
+try {
 if (m.sender === conn.user.jid) return
 if (m.sender === isAdmin) return
 if (iscekplayer) return m.reply('Anda Sudah Terdaftar Sebelumnya.') 
@@ -42,8 +43,8 @@ let img =  ( await fetch('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9Gc
 let stickGame = m.sender
 
 _player.push(m.sender)
-fs.writeFileSync('./tmp/adventureDB/player.json', JSON.stringify(_player)) 
-fs.writeFileSync('./tmp/adventureDB/pin.json', JSON.stringify(setPin)) 
+fs.writeFileSync('./tmp/adventureDB/player.json', JSON.stringify(_player))
+fs.writeFileSync('./tmp/adventureDB/pin.json', JSON.stringify(setPin))
 addPlayerUser(m.sender, kodePinPlayer)
 let teks = ` _made in @arifirazzaq2001_
 
@@ -70,8 +71,11 @@ caption: teks,
       }
     }) 
 console.log(`${m.pushname} Berhasil Membuat Json Player Games`)
+} catch (e) {
+console.log(e)
 } 
 } 
+}
 
 function getGroupAdmin(participants) {
 	admins = []
