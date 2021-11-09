@@ -11,6 +11,7 @@ RUN apt-get update && \
 
 COPY package.json .
 RUN npm install -g npm@8.1.3
+RUN npm audit
 RUN npm install 
 RUN npm instal pm2 -g
 ENV PM2_PUBLIC_KEY r5nhytflswo1ly3
