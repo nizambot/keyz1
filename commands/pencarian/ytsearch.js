@@ -1,4 +1,4 @@
-let yts = require('yt-search')
+/*let yts = require('yt-search')
 
 module.exports = {
 name: ["yts"],
@@ -31,4 +31,4 @@ ${v.videoCount} video
 }
 /*
 * MADE BY RIZKY
-*/
+*/*/
